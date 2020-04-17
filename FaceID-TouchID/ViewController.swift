@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class ViewController: UIViewController {
 
+    var contex = LAContext()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
