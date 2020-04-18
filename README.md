@@ -8,4 +8,6 @@ You use an authentication context to evaluate the user’s identity, either with
 
 3. Before attempting to authenticate, test to make sure that you actually have the ability to do so by calling the canEvaluatePolicy(_:error:) method:
 ```var error: NSError?
-if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {```
+if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) { ```
+
+4. 3 මගින් , මේක මගින් යුසේර් ව authenticate  කරන්න පුලුවන්ද කියල බලපු එකෙන් ම උසේර් ව authenticate කරන්න .
