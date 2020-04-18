@@ -17,6 +17,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func authenticateButtonTapped(_ sender: Any) {
+    }
+    
     func testPolicyAvailability(){
         var error: NSError?
         if contex.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error){
