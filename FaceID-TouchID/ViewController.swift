@@ -12,6 +12,27 @@ import LocalAuthentication
 class ViewController: UIViewController {
     //1
     var contex = LAContext()
+    
+    /// The available states of being logged in or not.
+    enum AuthenticationState {
+        case loggedin, loggedout
+    }
+
+    /// The current authentication state.
+    var state = AuthenticationState.loggedout {
+
+        // Update the UI on a change.
+        didSet {
+            //TODO:   loginButton.isHighlighted = state == .loggedin  // The button text changes on highlight.
+
+            // FaceID runs right away on evaluation, so you might want to warn the user.
+            //  In this app, show a special Face ID prompt if the user is logged out, but
+            //  only if the device supports that kind of authentication.
+            //TODO: faceIDLabel.isHidden = (state == .loggedin) || (context.biometryType != .faceID)
+        }
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
