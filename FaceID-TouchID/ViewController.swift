@@ -11,7 +11,7 @@ import LocalAuthentication
 
 class ViewController: UIViewController {
     //1
-    var contex = LAContext()
+    var context = LAContext()
     
     /// The available states of being logged in or not.
     enum AuthenticationState {
@@ -45,7 +45,13 @@ class ViewController: UIViewController {
     //2
     func testPolicyAvailability(){
         var error: NSError?
-        if contex.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error){
+        // Get a fresh context for each login. If you use the same context on multiple attempts
+        //  (by commenting out the next line), then a previously successful authentication
+        //  causes the next policy evaluation to succeed without testing biometry again.
+        //  That's usually not what you want.
+        context = LAContext()
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error){
             evaluate()
         }else{
             print(error)
@@ -55,7 +61,7 @@ class ViewController: UIViewController {
     //3
     func evaluate() {
         let reason = "Log in to your account"
-        contex.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { (success, error) in
+        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { (success, error) in
             if success {
                 
             } else{
