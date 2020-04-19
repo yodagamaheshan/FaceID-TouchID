@@ -35,3 +35,10 @@ context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason ) { s
     }
 }
 ```
+5. faceID එක on  වෙනවා evaluate func එක call කරපු ගමන් ;අපිට ඉතින් පුළුවන් අපි faceID image එකක් තියෙන බුට්ටෝන් එකක් එහෙම දාල තියෙනවනම් එක dissable කරන්න faceID device eke නැත්නම් .
+
+```
+faceIDLabel.isHidden = (state == .loggedin) || (context.biometryType != .faceID)
+
+//context.biometryType - The type of biometric authentication supported by the device.
+```
