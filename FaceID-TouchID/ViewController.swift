@@ -55,6 +55,22 @@ class ViewController: UIViewController {
             evaluate()
         }else{
             print(error)
+            switch error!.code {
+            case LAError.biometryNotAvailable.rawValue:
+                print(error.debugDescription)
+                //Biometry is not available on the device.
+            
+            case LAError.biometryNotEnrolled.rawValue:
+                 print(error.debugDescription)
+                //The user has no enrolled biometric identities.
+                
+                case LAError.biometryLockout.rawValue:
+                print(error.debugDescription)
+                //Biometry is locked because there were too many failed attempts.
+                
+            default:
+                print(error.debugDescription)
+            }
         }
     }
     
