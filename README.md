@@ -44,3 +44,7 @@ faceIDLabel.isHidden = (state == .loggedin) || (context.biometryType != .faceID)
 
 //context.biometryType - The type of biometric authentication supported by the device.
 ```
+
+
+
+#error!._code -> to access error code 
