@@ -20,6 +20,8 @@ if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
 let reason = "Log in to your account"
 context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason ) { success, error in
 
+*error!._code*
+
     if success {
 
         // Move to the main thread because a state update triggers UI changes.
