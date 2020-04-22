@@ -47,4 +47,4 @@ faceIDLabel.isHidden = (state == .loggedin) || (context.biometryType != .faceID)
 
 
 
-####### error!._code -> to access error code 
+``` error!._code //to access error code ```
