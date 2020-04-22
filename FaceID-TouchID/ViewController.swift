@@ -82,9 +82,37 @@ class ViewController: UIViewController {
                 
             } else{
                 print(error?.localizedDescription ?? "Failed to authenticate")
-                
+                ViewController.evaluateAuthenticationPolicyMessageForLA(errorCode: error!._code)
                 // Fall back to a asking for username and password.
             }
+        }
+    }
+    
+    // errorcodes
+    class func evaluateAuthenticationPolicyMessageForLA(errorCode: Int){
+        print(errorCode)
+        var message = ""
+        
+        switch errorCode {
+            
+        case LAError.authenticationFailed.rawValue:
+            print(errorCode)
+        case LAError.appCancel.rawValue:
+             print(errorCode)
+        case LAError.invalidContext.rawValue:
+             print(errorCode)
+        case LAError.notInteractive.rawValue:
+             print(errorCode)
+        case LAError.passcodeNotSet.rawValue:
+             print(errorCode)
+        case LAError.systemCancel.rawValue:
+             print(errorCode)
+        case LAError.userCancel.rawValue:
+             print(errorCode)
+        case LAError.userFallback.rawValue:
+             print(errorCode)
+        default:
+             print(errorCode)
         }
     }
 }
