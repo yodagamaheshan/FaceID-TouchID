@@ -10,6 +10,11 @@ import UIKit
 
 class KeyChainItemAccessViewController: UIViewController {
 
+    struct Credentials{
+        var userName: String
+        var password: String
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +30,5 @@ class KeyChainItemAccessViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
