@@ -112,7 +112,7 @@ class ViewController: UIViewController {
         case LAError.userFallback.rawValue:
              print(errorCode)
         default:
-             print(errorCode)
+             print("Error :\(errorCode)")
         }
     }
 }
