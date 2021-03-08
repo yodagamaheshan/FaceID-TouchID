@@ -15,11 +15,11 @@ class ViewController: UIViewController {
     
     /// The available states of being logged in or not.
     enum AuthenticationState {
-        case loggedin, loggedout
+        case loggedIn, loggedOut
     }
     
     /// The current authentication state.
-    var state = AuthenticationState.loggedout {
+    var state = AuthenticationState.loggedOut {
         
         // Update the UI on a change.
         didSet {
